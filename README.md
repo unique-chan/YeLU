@@ -1,2 +1,2 @@
 # YeLU
-ReLU
+YeLU: Yechan's modified ReLU
