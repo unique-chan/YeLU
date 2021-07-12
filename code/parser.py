@@ -10,7 +10,7 @@ def parse_util(parser, verbose):
     return args
 
 
-def parse_args(verbose=True):
+def get_parser():
     parser = argparse.ArgumentParser(description='github.com/unique-chan')
     # arguments
     parser.add_argument('--net', type=str, help='neural net name')
@@ -21,6 +21,11 @@ def parse_args(verbose=True):
     parser.add_argument('--epochs', default=5, type=int, help='epochs (default: 0.1)')
     parser.add_argument('--batch_size', default=128, type=int, help='batch_size (default: 0.1)')
     parser.add_argument('--gpu_index', default=0, type=int, help='gpu_index (-1: cpu, 0 ~: gpu, default: 0)')
-    # parse
-    return parse_util(parser, verbose)
+    parser.add_argument('--cv_mode', default='train-test', type=str, help="mode: ['train-test'|'train-valid-test']")
+    return parser
 
+
+def parse_args(verbose=True):
+    parser = get_parser()
+    parser.add_argument('--num_classes', type=int)
+    return parse_util(parser, verbose)
