@@ -1,6 +1,9 @@
 # YeLU
 YeLU: Yechan + ReLU Project
 
+## Notice
+Please do not FORK this repo now. Under construction. 🚧
+
 ## Prerequisites
 * See REQUIREMENTS.txt
 
